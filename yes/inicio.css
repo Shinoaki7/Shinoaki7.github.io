@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000031;
+}
+
+
+.animated-word {
+    display: flex;
+    font-size: 60px;
+    margin: -70px 0 70px 0;
+    align-items: center;
+    justify-content: center;
+}
+.letter {
+    animation: gradient .6s infinite linear forwards;
+    transition: 0.4s;
+    transform:  translateX(0);
+    font-size: 1.5em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 10px;
+    font-weight: 900;
+    cursor: grab;
+    color: #fff;
+}
+.letter:hover {
+    background:linear-gradient(120deg, hsl(0, 100%, 43%), hsl(291, 100%, 50%));
+    -webkit-background-clip: text;
+    color: #000031;
+    -webkit-text-stroke: 5px transparent;
+    animation: gradient 30s linear infinite0;
+    background-size: 200%;
+}
+
+a{
+    position: relative;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 287px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+
+
+a span{
+    position: relative;
+    color: white;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 8px;
+    z-index: 1;
+}
+
+
+
+a .liquid{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 287px;
+    height: 230px;
+    background: #ec2300;
+    box-shadow: inset 0 0 50px black;
+    transition: .5s;
+}
+a .liquid::after,
+a .liquid::before{
+    content: '';
+    width: 170%;
+    height: 250%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #6708c5;
+}
+a .liquid::before{
+    border-radius: 45%;
+    background: #b51b33;
+    animation: animate 5s linear infinite;
+}
+a .liquid::after{
+    border-radius: 40%;
+    background: crimson;
+    animation: animate 10s linear infinite;
+}
+a:hover .liquid{
+    top: -139px;
+}
+
+footer{
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 3em;
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes animate {
+    from{
+        transform: translate(-50%, -75%) rotate(0deg); 
+    }
+
+    to{
+        transform: translate(-50%, -75%) rotate(360deg); 
+
+    }
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0% 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 200% 0;
+    }
+
+}
